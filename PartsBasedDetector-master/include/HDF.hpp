@@ -23,14 +23,14 @@ class HDF
         hid_t file, dataset;
         hsize_t data_size[2];
         std::string datasetname;
-	int prevRows;
-	int filledOffset;
+        int prevRows;
+        int filledOffset;
 
     public:
         HDF();
         HDF(int M, int N, int initialSize);
         virtual ~HDF();
-	int populateFile(int data[],int arrsize);
+        int populateFile(int data[],int arrsize);
         int size();
         int rowSize(int n);
         vectorMat scores(int n);

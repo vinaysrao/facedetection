@@ -1,7 +1,10 @@
 #include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 #include <hdf5.h>
 
-#include "../include/HDF.hpp"
+#include "HDF.hpp"
+#include "types.hpp"
+
 #include <iostream>
 using namespace std;
 
@@ -42,7 +45,45 @@ HDF::~HDF()
     H5Fclose(file);
 }
 
+int HDF::size()
+{
+    return size_;
+}
 
+int HDF::rowSize(int n)
+{
+    return N;
+}
+
+vectorMat HDF::scores(int n)
+{
+    vectorMat scores_;
+    int start = n * M;
+
+    for(int i = 0; i < N; i++)
+    {
+        size_s s = sizeid[start + i];
+        cv::Mat response(s.x, s.y, CV_64F);
+
+        hsize_t offset[2] = {start + i, 0};
+        hsize_t dims[2] = {1, N};
+
+        hid_t filespace = H5Dget_space(dataset);
+        H5Sselect_hyperslab(filespace, H5S_SELECT_SET, offset, NULL,
+                            dims, NULL);
+        hid_t memspace = H5Screate_simple(rank, dims, NULL);
+        int rdata[N];
+        H5Dread(dataset, H5T_NATIVE_INT, memspace, filespace, H5P_DEFAULT, rdata);
+
+        int c = 0;
+        for(int x = 0; x < s.x; x++)
+            for(int y = 0; y < s.y; y++)
+                response.at<float>(x, y) = rdata[c++];
+        scores_.push_back(response);
+    }
+
+    return scores_;
+}
 
 int HDF::populateFile(int data[], int arrsize)
 {
