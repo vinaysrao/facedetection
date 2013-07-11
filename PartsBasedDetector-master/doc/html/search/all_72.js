@@ -9,5 +9,5 @@ var searchData=
   ['reducemax',['reduceMax',['../classMath.html#a97f8ffb7a7855e6cc0dabcef0817bafa',1,'Math']]],
   ['reducepickindex',['reducePickIndex',['../classMath.html#a1c558fca5013d16a9df3adf2caa7c610',1,'Math']]],
   ['resize',['resize',['../classCandidate.html#a2792fab371e105cd88a2b51ba3a0b733',1,'Candidate']]],
-  ['rowsize',['rowSize',['../classHDF.html#aae50caafa701b43d66325f81359ef9a6',1,'HDF']]]
+  ['rowsize',['rowSize',['../classHDF.html#a131cb3f6cc240a55a2bfa903c7eaff19',1,'HDF']]]
 ];

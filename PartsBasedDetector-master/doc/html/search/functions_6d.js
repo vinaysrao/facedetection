@@ -5,6 +5,6 @@ var searchData=
   ['math',['Math',['../classMath.html#a4b0f0a2da150d3fbfdb71524420c9fbf',1,'Math']]],
   ['matlabiomodel',['MatlabIOModel',['../classMatlabIOModel.html#ac4e387c6665a094f985b0ca0c37b1aee',1,'MatlabIOModel']]],
   ['median',['median',['../classMath.html#aca890c10f12205897ac47792494d149f',1,'Math']]],
-  ['min',['min',['../classDynamicProgram.html#ad4f899b21d3423b4fc52ef4fb77cdd86',1,'DynamicProgram']]],
+  ['min',['min',['../classDynamicProgram.html#a2758cc30f0fc8f32ac94c5b2e40cb433',1,'DynamicProgram']]],
   ['model',['Model',['../classModel.html#ae3b375de5f6df4faf74a95d64748e048',1,'Model']]]
 ];

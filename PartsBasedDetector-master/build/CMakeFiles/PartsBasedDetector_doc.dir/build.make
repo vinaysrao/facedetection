@@ -31,11 +31,17 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# Escaping for special characters.
+EQUALS = =
+
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master
+CMAKE_SOURCE_DIR = /home/vsrao/git-reps/facedetection/PartsBasedDetector-master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master/build
+CMAKE_BINARY_DIR = /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/build
 
 # Utility rule file for PartsBasedDetector_doc.
 
@@ -43,7 +49,7 @@ CMAKE_BINARY_DIR = /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master
 include CMakeFiles/PartsBasedDetector_doc.dir/progress.make
 
 CMakeFiles/PartsBasedDetector_doc:
-	/usr/bin/doxygen /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master/doc/Doxyfile
+	/usr/bin/doxygen /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/doc/Doxyfile
 
 PartsBasedDetector_doc: CMakeFiles/PartsBasedDetector_doc
 PartsBasedDetector_doc: CMakeFiles/PartsBasedDetector_doc.dir/build.make
@@ -58,6 +64,6 @@ CMakeFiles/PartsBasedDetector_doc.dir/clean:
 .PHONY : CMakeFiles/PartsBasedDetector_doc.dir/clean
 
 CMakeFiles/PartsBasedDetector_doc.dir/depend:
-	cd /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master/build /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master/build /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master/build/CMakeFiles/PartsBasedDetector_doc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vsrao/git-reps/facedetection/PartsBasedDetector-master /home/vsrao/git-reps/facedetection/PartsBasedDetector-master /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/build /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/build /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/build/CMakeFiles/PartsBasedDetector_doc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PartsBasedDetector_doc.dir/depend
 

@@ -45,6 +45,7 @@
 #include "Model.hpp"
 #include "Parts.hpp"
 #include "types.hpp"
+#include "HDF.hpp"
 
 
 /*! @class DynamicProgram
@@ -71,7 +72,8 @@ public:
 	DynamicProgram(double thresh) : thresh_(thresh) {}
 	virtual ~DynamicProgram() {}
 	// public methods
-	void min(Parts& parts, vector2DMat& scores, vector4DMat& Ix, vector4DMat& Iy, vector4DMat& Ik, vector2DMat& rootv, vector2DMat& rooti);
+// 	void min(Parts& parts, vector2DMat& scores, vector4DMat& Ix, vector4DMat& Iy, vector4DMat& Ik, vector2DMat& rootv, vector2DMat& rooti);
+    void min(Parts& parts, HDF& scores, vector4DMat& Ix, vector4DMat& Iy, vector4DMat& Ik, vector2DMat& rootv, vector2DMat& rooti);
 	void argmin(Parts& parts, const vector2DMat& rootv, const vector2DMat& rooti, const vectorf scales, const vector4DMat& Ix, const vector4DMat& Iy, const vector4DMat& Ik, vectorCandidate& candidates);
 	void distanceTransform(const cv::Mat& score_in, const vectorf w, cv::Point os, cv::Mat& score_out, cv::Mat& Ix, cv::Mat& Iy);
 };

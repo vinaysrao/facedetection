@@ -1,8 +1,8 @@
 # --------------------
 # Project settings
 PROJECT_NAME            = PartsBasedDetector
-INPUT                   = /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master/src /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master/include
-OUTPUT_DIRECTORY        = /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master/doc
+INPUT                   = /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/include
+OUTPUT_DIRECTORY        = /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/doc
 
 # --------------------
 # Output DOC types

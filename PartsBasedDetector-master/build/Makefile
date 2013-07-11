@@ -35,19 +35,25 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# Escaping for special characters.
+EQUALS = =
+
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master
+CMAKE_SOURCE_DIR = /home/vsrao/git-reps/facedetection/PartsBasedDetector-master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master/build
+CMAKE_BINARY_DIR = /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
-	/usr/bin/cmake -i .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -107,9 +113,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master/build/CMakeFiles /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/build/CMakeFiles /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aindra/FR/src/FR/FR/detection/PartsBasedDetector-master/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

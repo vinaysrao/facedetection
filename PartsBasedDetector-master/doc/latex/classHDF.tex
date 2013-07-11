@@ -1,40 +1,44 @@
-\hypertarget{classHDF}{\section{\-H\-D\-F \-Class \-Reference}
-\label{classHDF}\index{\-H\-D\-F@{\-H\-D\-F}}
+\hypertarget{classHDF}{\section{H\-D\-F Class Reference}
+\label{classHDF}\index{H\-D\-F@{H\-D\-F}}
 }
 
 
-{\ttfamily \#include $<$\-H\-D\-F.\-hpp$>$}
+{\ttfamily \#include $<$H\-D\-F.\-hpp$>$}
 
-\subsection*{\-Data \-Structures}
+\subsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structHDF_1_1size__s}{size\-\_\-s}
 \end{DoxyCompactItemize}
-\subsection*{\-Public \-Member \-Functions}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classHDF_a1e33708a192cf30a7bf826b5d53d42cd}{\-H\-D\-F} ()
+\hyperlink{classHDF_a1e33708a192cf30a7bf826b5d53d42cd}{H\-D\-F} ()
 \item 
-\hyperlink{classHDF_a7379039c6dbb9d1ef70bfb1857b9fd93}{\-H\-D\-F} (int \hyperlink{classHDF_aee1593ceda7b33a941e52e9f6e998f51}{\-M}, int \hyperlink{classHDF_ab3b5c9aa5d584ac3aa16ee9c6d04c340}{\-N})
+\hyperlink{classHDF_a0f564af287f47d1761e1bd2aaf0bdf48}{H\-D\-F} (int \hyperlink{classHDF_aee1593ceda7b33a941e52e9f6e998f51}{M}, int \hyperlink{classHDF_ab3b5c9aa5d584ac3aa16ee9c6d04c340}{N}, int initial\-Size)
 \item 
 virtual \hyperlink{classHDF_ad204a0f509d106b76dac0cef51eba755}{$\sim$\-H\-D\-F} ()
 \item 
+int \hyperlink{classHDF_af991e83807876fa0029b70b5c9a998b3}{populate\-File} (int data\mbox{[}$\,$\mbox{]}, int arrsize)
+\item 
 int \hyperlink{classHDF_a33415e3a4a7b17ab5530db3335b5c6f6}{size} ()
 \item 
-int \hyperlink{classHDF_aae50caafa701b43d66325f81359ef9a6}{row\-Size} (int n)
+int \hyperlink{classHDF_a131cb3f6cc240a55a2bfa903c7eaff19}{row\-Size} ()
 \item 
 \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \hyperlink{classHDF_a99fee1b4aa1d3d6e4a667831e108945a}{scores} (int n)
+\item 
+\hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \hyperlink{classHDF_a422ba198c00f10a40ff4e262a9925f10}{operator\mbox{[}$\,$\mbox{]}} (int n)
 \end{DoxyCompactItemize}
-\subsection*{\-Private \-Attributes}
+\subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{classHDF_a4b0ee3e98c89b373052525bb5abd8fae}{size\-\_\-}
 \item 
 int \hyperlink{classHDF_ad8673b6d5dacddd59fcb8c10682160f7}{rank}
 \item 
-int \hyperlink{classHDF_aee1593ceda7b33a941e52e9f6e998f51}{\-M}
+int \hyperlink{classHDF_aee1593ceda7b33a941e52e9f6e998f51}{M}
 \item 
-int \hyperlink{classHDF_ab3b5c9aa5d584ac3aa16ee9c6d04c340}{\-N}
+int \hyperlink{classHDF_ab3b5c9aa5d584ac3aa16ee9c6d04c340}{N}
 \item 
 std\-::map$<$ int, \hyperlink{structHDF_1_1size__s}{size\-\_\-s} $>$ \hyperlink{classHDF_ab47d2b1f7a374429d26ec54f15f4cea5}{sizeid}
 \item 
@@ -45,89 +49,115 @@ hid\-\_\-t \hyperlink{classHDF_adc37f93332228a0d29d1d0b8f7021b0c}{dataset}
 hsize\-\_\-t \hyperlink{classHDF_a5fcc08146bef981eb0c865e01f8578a3}{data\-\_\-size} \mbox{[}2\mbox{]}
 \item 
 std\-::string \hyperlink{classHDF_a9b95020b5a2be0e7d2930c1221df9aa4}{datasetname}
+\item 
+int \hyperlink{classHDF_a9a4c71b47bab1ce6053362848828e8b0}{prev\-Rows}
+\item 
+int \hyperlink{classHDF_afcedff6f9548bada3d9ad4121bff726e}{filled\-Offset}
 \end{DoxyCompactItemize}
 
 
-\subsection{\-Constructor \& \-Destructor \-Documentation}
-\hypertarget{classHDF_a1e33708a192cf30a7bf826b5d53d42cd}{\index{\-H\-D\-F@{\-H\-D\-F}!\-H\-D\-F@{\-H\-D\-F}}
-\index{\-H\-D\-F@{\-H\-D\-F}!HDF@{\-H\-D\-F}}
-\subsubsection[{\-H\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-H\-D\-F\-::\-H\-D\-F} (
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classHDF_a1e33708a192cf30a7bf826b5d53d42cd}{\index{H\-D\-F@{H\-D\-F}!H\-D\-F@{H\-D\-F}}
+\index{H\-D\-F@{H\-D\-F}!HDF@{H\-D\-F}}
+\subsubsection[{H\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}H\-D\-F\-::\-H\-D\-F (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{classHDF_a1e33708a192cf30a7bf826b5d53d42cd}
-\hypertarget{classHDF_a7379039c6dbb9d1ef70bfb1857b9fd93}{\index{\-H\-D\-F@{\-H\-D\-F}!\-H\-D\-F@{\-H\-D\-F}}
-\index{\-H\-D\-F@{\-H\-D\-F}!HDF@{\-H\-D\-F}}
-\subsubsection[{\-H\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-H\-D\-F\-::\-H\-D\-F} (
+\hypertarget{classHDF_a0f564af287f47d1761e1bd2aaf0bdf48}{\index{H\-D\-F@{H\-D\-F}!H\-D\-F@{H\-D\-F}}
+\index{H\-D\-F@{H\-D\-F}!HDF@{H\-D\-F}}
+\subsubsection[{H\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}H\-D\-F\-::\-H\-D\-F (
 \begin{DoxyParamCaption}
-\item[{int}]{\-M, }
-\item[{int}]{\-N}
+\item[{int}]{M, }
+\item[{int}]{N, }
+\item[{int}]{initial\-Size}
 \end{DoxyParamCaption}
-)}}\label{classHDF_a7379039c6dbb9d1ef70bfb1857b9fd93}
-\hypertarget{classHDF_ad204a0f509d106b76dac0cef51eba755}{\index{\-H\-D\-F@{\-H\-D\-F}!$\sim$\-H\-D\-F@{$\sim$\-H\-D\-F}}
-\index{$\sim$\-H\-D\-F@{$\sim$\-H\-D\-F}!HDF@{\-H\-D\-F}}
-\subsubsection[{$\sim$\-H\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-H\-D\-F\-::$\sim$\-H\-D\-F} (
+)}}\label{classHDF_a0f564af287f47d1761e1bd2aaf0bdf48}
+\hypertarget{classHDF_ad204a0f509d106b76dac0cef51eba755}{\index{H\-D\-F@{H\-D\-F}!$\sim$\-H\-D\-F@{$\sim$\-H\-D\-F}}
+\index{$\sim$\-H\-D\-F@{$\sim$\-H\-D\-F}!HDF@{H\-D\-F}}
+\subsubsection[{$\sim$\-H\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}H\-D\-F\-::$\sim$\-H\-D\-F (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classHDF_ad204a0f509d106b76dac0cef51eba755}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classHDF_ad204a0f509d106b76dac0cef51eba755}
 
 
-\subsection{\-Member \-Function \-Documentation}
-\hypertarget{classHDF_aae50caafa701b43d66325f81359ef9a6}{\index{\-H\-D\-F@{\-H\-D\-F}!row\-Size@{row\-Size}}
-\index{row\-Size@{row\-Size}!HDF@{\-H\-D\-F}}
-\subsubsection[{row\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-H\-D\-F\-::row\-Size} (
+\subsection{Member Function Documentation}
+\hypertarget{classHDF_a422ba198c00f10a40ff4e262a9925f10}{\index{H\-D\-F@{H\-D\-F}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!HDF@{H\-D\-F}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-Mat} H\-D\-F\-::operator\mbox{[}$\,$\mbox{]} (
 \begin{DoxyParamCaption}
 \item[{int}]{n}
 \end{DoxyParamCaption}
-)}}\label{classHDF_aae50caafa701b43d66325f81359ef9a6}
-\hypertarget{classHDF_a99fee1b4aa1d3d6e4a667831e108945a}{\index{\-H\-D\-F@{\-H\-D\-F}!scores@{scores}}
-\index{scores@{scores}!HDF@{\-H\-D\-F}}
-\subsubsection[{scores}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-Mat} {\bf \-H\-D\-F\-::scores} (
+)}}\label{classHDF_a422ba198c00f10a40ff4e262a9925f10}
+\hypertarget{classHDF_af991e83807876fa0029b70b5c9a998b3}{\index{H\-D\-F@{H\-D\-F}!populate\-File@{populate\-File}}
+\index{populate\-File@{populate\-File}!HDF@{H\-D\-F}}
+\subsubsection[{populate\-File}]{\setlength{\rightskip}{0pt plus 5cm}int H\-D\-F\-::populate\-File (
+\begin{DoxyParamCaption}
+\item[{int}]{data\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{arrsize}
+\end{DoxyParamCaption}
+)}}\label{classHDF_af991e83807876fa0029b70b5c9a998b3}
+\hypertarget{classHDF_a131cb3f6cc240a55a2bfa903c7eaff19}{\index{H\-D\-F@{H\-D\-F}!row\-Size@{row\-Size}}
+\index{row\-Size@{row\-Size}!HDF@{H\-D\-F}}
+\subsubsection[{row\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int H\-D\-F\-::row\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHDF_a131cb3f6cc240a55a2bfa903c7eaff19}
+\hypertarget{classHDF_a99fee1b4aa1d3d6e4a667831e108945a}{\index{H\-D\-F@{H\-D\-F}!scores@{scores}}
+\index{scores@{scores}!HDF@{H\-D\-F}}
+\subsubsection[{scores}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-Mat} H\-D\-F\-::scores (
 \begin{DoxyParamCaption}
 \item[{int}]{n}
 \end{DoxyParamCaption}
 )}}\label{classHDF_a99fee1b4aa1d3d6e4a667831e108945a}
-\hypertarget{classHDF_a33415e3a4a7b17ab5530db3335b5c6f6}{\index{\-H\-D\-F@{\-H\-D\-F}!size@{size}}
-\index{size@{size}!HDF@{\-H\-D\-F}}
-\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-H\-D\-F\-::size} (
+\hypertarget{classHDF_a33415e3a4a7b17ab5530db3335b5c6f6}{\index{H\-D\-F@{H\-D\-F}!size@{size}}
+\index{size@{size}!HDF@{H\-D\-F}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int H\-D\-F\-::size (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{classHDF_a33415e3a4a7b17ab5530db3335b5c6f6}
 
 
-\subsection{\-Field \-Documentation}
-\hypertarget{classHDF_a5fcc08146bef981eb0c865e01f8578a3}{\index{\-H\-D\-F@{\-H\-D\-F}!data\-\_\-size@{data\-\_\-size}}
-\index{data\-\_\-size@{data\-\_\-size}!HDF@{\-H\-D\-F}}
-\subsubsection[{data\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}hsize\-\_\-t {\bf \-H\-D\-F\-::data\-\_\-size}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classHDF_a5fcc08146bef981eb0c865e01f8578a3}
-\hypertarget{classHDF_adc37f93332228a0d29d1d0b8f7021b0c}{\index{\-H\-D\-F@{\-H\-D\-F}!dataset@{dataset}}
-\index{dataset@{dataset}!HDF@{\-H\-D\-F}}
-\subsubsection[{dataset}]{\setlength{\rightskip}{0pt plus 5cm}hid\-\_\-t {\bf \-H\-D\-F\-::dataset}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classHDF_adc37f93332228a0d29d1d0b8f7021b0c}
-\hypertarget{classHDF_a9b95020b5a2be0e7d2930c1221df9aa4}{\index{\-H\-D\-F@{\-H\-D\-F}!datasetname@{datasetname}}
-\index{datasetname@{datasetname}!HDF@{\-H\-D\-F}}
-\subsubsection[{datasetname}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-H\-D\-F\-::datasetname}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classHDF_a9b95020b5a2be0e7d2930c1221df9aa4}
-\hypertarget{classHDF_ab7e91e3f89c7fb189e0b0d9705d2f569}{\index{\-H\-D\-F@{\-H\-D\-F}!file@{file}}
-\index{file@{file}!HDF@{\-H\-D\-F}}
-\subsubsection[{file}]{\setlength{\rightskip}{0pt plus 5cm}hid\-\_\-t {\bf \-H\-D\-F\-::file}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classHDF_ab7e91e3f89c7fb189e0b0d9705d2f569}
-\hypertarget{classHDF_aee1593ceda7b33a941e52e9f6e998f51}{\index{\-H\-D\-F@{\-H\-D\-F}!\-M@{\-M}}
-\index{\-M@{\-M}!HDF@{\-H\-D\-F}}
-\subsubsection[{\-M}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-H\-D\-F\-::\-M}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classHDF_aee1593ceda7b33a941e52e9f6e998f51}
-\hypertarget{classHDF_ab3b5c9aa5d584ac3aa16ee9c6d04c340}{\index{\-H\-D\-F@{\-H\-D\-F}!\-N@{\-N}}
-\index{\-N@{\-N}!HDF@{\-H\-D\-F}}
-\subsubsection[{\-N}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-H\-D\-F\-::\-N}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classHDF_ab3b5c9aa5d584ac3aa16ee9c6d04c340}
-\hypertarget{classHDF_ad8673b6d5dacddd59fcb8c10682160f7}{\index{\-H\-D\-F@{\-H\-D\-F}!rank@{rank}}
-\index{rank@{rank}!HDF@{\-H\-D\-F}}
-\subsubsection[{rank}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-H\-D\-F\-::rank}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classHDF_ad8673b6d5dacddd59fcb8c10682160f7}
-\hypertarget{classHDF_a4b0ee3e98c89b373052525bb5abd8fae}{\index{\-H\-D\-F@{\-H\-D\-F}!size\-\_\-@{size\-\_\-}}
-\index{size\-\_\-@{size\-\_\-}!HDF@{\-H\-D\-F}}
-\subsubsection[{size\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-H\-D\-F\-::size\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classHDF_a4b0ee3e98c89b373052525bb5abd8fae}
-\hypertarget{classHDF_ab47d2b1f7a374429d26ec54f15f4cea5}{\index{\-H\-D\-F@{\-H\-D\-F}!sizeid@{sizeid}}
-\index{sizeid@{sizeid}!HDF@{\-H\-D\-F}}
-\subsubsection[{sizeid}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int, {\bf size\-\_\-s}$>$ {\bf \-H\-D\-F\-::sizeid}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classHDF_ab47d2b1f7a374429d26ec54f15f4cea5}
+\subsection{Field Documentation}
+\hypertarget{classHDF_a5fcc08146bef981eb0c865e01f8578a3}{\index{H\-D\-F@{H\-D\-F}!data\-\_\-size@{data\-\_\-size}}
+\index{data\-\_\-size@{data\-\_\-size}!HDF@{H\-D\-F}}
+\subsubsection[{data\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}hsize\-\_\-t H\-D\-F\-::data\-\_\-size\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classHDF_a5fcc08146bef981eb0c865e01f8578a3}
+\hypertarget{classHDF_adc37f93332228a0d29d1d0b8f7021b0c}{\index{H\-D\-F@{H\-D\-F}!dataset@{dataset}}
+\index{dataset@{dataset}!HDF@{H\-D\-F}}
+\subsubsection[{dataset}]{\setlength{\rightskip}{0pt plus 5cm}hid\-\_\-t H\-D\-F\-::dataset\hspace{0.3cm}{\ttfamily [private]}}}\label{classHDF_adc37f93332228a0d29d1d0b8f7021b0c}
+\hypertarget{classHDF_a9b95020b5a2be0e7d2930c1221df9aa4}{\index{H\-D\-F@{H\-D\-F}!datasetname@{datasetname}}
+\index{datasetname@{datasetname}!HDF@{H\-D\-F}}
+\subsubsection[{datasetname}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string H\-D\-F\-::datasetname\hspace{0.3cm}{\ttfamily [private]}}}\label{classHDF_a9b95020b5a2be0e7d2930c1221df9aa4}
+\hypertarget{classHDF_ab7e91e3f89c7fb189e0b0d9705d2f569}{\index{H\-D\-F@{H\-D\-F}!file@{file}}
+\index{file@{file}!HDF@{H\-D\-F}}
+\subsubsection[{file}]{\setlength{\rightskip}{0pt plus 5cm}hid\-\_\-t H\-D\-F\-::file\hspace{0.3cm}{\ttfamily [private]}}}\label{classHDF_ab7e91e3f89c7fb189e0b0d9705d2f569}
+\hypertarget{classHDF_afcedff6f9548bada3d9ad4121bff726e}{\index{H\-D\-F@{H\-D\-F}!filled\-Offset@{filled\-Offset}}
+\index{filled\-Offset@{filled\-Offset}!HDF@{H\-D\-F}}
+\subsubsection[{filled\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}int H\-D\-F\-::filled\-Offset\hspace{0.3cm}{\ttfamily [private]}}}\label{classHDF_afcedff6f9548bada3d9ad4121bff726e}
+\hypertarget{classHDF_aee1593ceda7b33a941e52e9f6e998f51}{\index{H\-D\-F@{H\-D\-F}!M@{M}}
+\index{M@{M}!HDF@{H\-D\-F}}
+\subsubsection[{M}]{\setlength{\rightskip}{0pt plus 5cm}int H\-D\-F\-::\-M\hspace{0.3cm}{\ttfamily [private]}}}\label{classHDF_aee1593ceda7b33a941e52e9f6e998f51}
+\hypertarget{classHDF_ab3b5c9aa5d584ac3aa16ee9c6d04c340}{\index{H\-D\-F@{H\-D\-F}!N@{N}}
+\index{N@{N}!HDF@{H\-D\-F}}
+\subsubsection[{N}]{\setlength{\rightskip}{0pt plus 5cm}int H\-D\-F\-::\-N\hspace{0.3cm}{\ttfamily [private]}}}\label{classHDF_ab3b5c9aa5d584ac3aa16ee9c6d04c340}
+\hypertarget{classHDF_a9a4c71b47bab1ce6053362848828e8b0}{\index{H\-D\-F@{H\-D\-F}!prev\-Rows@{prev\-Rows}}
+\index{prev\-Rows@{prev\-Rows}!HDF@{H\-D\-F}}
+\subsubsection[{prev\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}int H\-D\-F\-::prev\-Rows\hspace{0.3cm}{\ttfamily [private]}}}\label{classHDF_a9a4c71b47bab1ce6053362848828e8b0}
+\hypertarget{classHDF_ad8673b6d5dacddd59fcb8c10682160f7}{\index{H\-D\-F@{H\-D\-F}!rank@{rank}}
+\index{rank@{rank}!HDF@{H\-D\-F}}
+\subsubsection[{rank}]{\setlength{\rightskip}{0pt plus 5cm}int H\-D\-F\-::rank\hspace{0.3cm}{\ttfamily [private]}}}\label{classHDF_ad8673b6d5dacddd59fcb8c10682160f7}
+\hypertarget{classHDF_a4b0ee3e98c89b373052525bb5abd8fae}{\index{H\-D\-F@{H\-D\-F}!size\-\_\-@{size\-\_\-}}
+\index{size\-\_\-@{size\-\_\-}!HDF@{H\-D\-F}}
+\subsubsection[{size\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int H\-D\-F\-::size\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classHDF_a4b0ee3e98c89b373052525bb5abd8fae}
+\hypertarget{classHDF_ab47d2b1f7a374429d26ec54f15f4cea5}{\index{H\-D\-F@{H\-D\-F}!sizeid@{sizeid}}
+\index{sizeid@{sizeid}!HDF@{H\-D\-F}}
+\subsubsection[{sizeid}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int, {\bf size\-\_\-s}$>$ H\-D\-F\-::sizeid\hspace{0.3cm}{\ttfamily [private]}}}\label{classHDF_ab47d2b1f7a374429d26ec54f15f4cea5}
 
 
-\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/aindra/\-F\-R/src/\-F\-R/\-F\-R/detection/\-Parts\-Based\-Detector-\/master/include/\hyperlink{HDF_8hpp}{\-H\-D\-F.\-hpp}\item 
-/home/aindra/\-F\-R/src/\-F\-R/\-F\-R/detection/\-Parts\-Based\-Detector-\/master/src/\hyperlink{HDF_8cpp}{\-H\-D\-F.\-cpp}\end{DoxyCompactItemize}
+/home/vsrao/git-\/reps/facedetection/\-Parts\-Based\-Detector-\/master/include/\hyperlink{HDF_8hpp}{H\-D\-F.\-hpp}\item 
+/home/vsrao/git-\/reps/facedetection/\-Parts\-Based\-Detector-\/master/src/\hyperlink{HDF_8cpp}{H\-D\-F.\-cpp}\end{DoxyCompactItemize}

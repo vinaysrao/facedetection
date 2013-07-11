@@ -41,6 +41,8 @@
 #include <limits>
 #include "../include/Math.hpp"
 #include "../include/DynamicProgram.hpp"
+#include "HDF.hpp"
+
 using namespace cv;
 using namespace std;
 
@@ -67,12 +69,10 @@ using namespace std;
  *
  */
 template<typename T>
-void DynamicProgram<T>::min(Parts& parts, vector2DMat& scores, vector4DMat& Ix, vector4DMat& Iy, vector4DMat& Ik, vector2DMat& rootv, vector2DMat& rooti) {
+void DynamicProgram<T>::min(Parts& parts, HDF& scores, vector4DMat& Ix, vector4DMat& Iy, vector4DMat& Ik, vector2DMat& rootv, vector2DMat& rooti) {
 
 	// initialize the outputs, preallocate vectors to make them thread safe
 	// TODO: better initialisation of Ix, Iy, Ik
-	cout<< "score size: " << scores.size() <<" "<<scores[0].size() <<" " << scores[0][0].size() <<" " <<endl;
-	exit(1);
 	const unsigned int nscales = scores.size();
 	const unsigned int ncomponents = parts.ncomponents();
 	Ix.resize(nscales, vector3DMat(ncomponents));
@@ -95,7 +95,7 @@ void DynamicProgram<T>::min(Parts& parts, vector2DMat& scores, vector4DMat& Ix, 
 		Ix[n][c].resize(parts.nparts(c));
 		Iy[n][c].resize(parts.nparts(c));
 		Ik[n][c].resize(parts.nparts(c));
-		vectorMat ncscores(scores[n].size());
+		vectorMat ncscores(scores.rowSize());
 
 		for (int p = parts.nparts(c)-1; p > 0; --p) {
 
@@ -118,7 +118,7 @@ void DynamicProgram<T>::min(Parts& parts, vector2DMat& scores, vector4DMat& Ix, 
 				Mat_<T> score_in, score_dt;
 				Mat_<int> Ix_dt, Iy_dt;
 				if (cpart.score(ncscores, m).empty()) {
-					score_in = cpart.score(scores[n], m);
+					score_in = cpart.score(&scores[n], m);
 				} else {
 					score_in = cpart.score(ncscores, m);
 				}
@@ -168,7 +168,7 @@ void DynamicProgram<T>::min(Parts& parts, vector2DMat& scores, vector4DMat& Ix, 
 
 				// update the parent's score
 				ComponentPart parent = cpart.parent();
-				if (parent.score(ncscores,m).empty()) parent.score(scores[n],m).copyTo(parent.score(ncscores,m));
+				if (parent.score(ncscores,m).empty()) parent.score(&scores[n],m).copyTo(parent.score(ncscores,m));
 				parent.score(ncscores,m) += maxv;
 				if (parent.self() == 0) {
 					ComponentPart root = parts.component(c);

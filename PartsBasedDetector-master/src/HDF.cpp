@@ -50,9 +50,14 @@ int HDF::size()
     return size_;
 }
 
-int HDF::rowSize(int n)
+int HDF::rowSize()
 {
     return N;
+}
+
+vectorMat HDF::operator[](int n)
+{
+    return scores(n);
 }
 
 vectorMat HDF::scores(int n)

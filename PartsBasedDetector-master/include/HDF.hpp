@@ -32,8 +32,11 @@ class HDF
         virtual ~HDF();
         int populateFile(int data[],int arrsize);
         int size();
-        int rowSize(int n);
+        int rowSize();
         vectorMat scores(int n);
+
+        //scores[n]
+        vectorMat operator[] (int n);
 };
 
 #endif //IFDEF

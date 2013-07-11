@@ -1,70 +1,70 @@
-\hypertarget{nms_8cpp}{\section{/home/aindra/\-F\-R/src/\-F\-R/\-F\-R/detection/\-Parts\-Based\-Detector-\/master/src/nms.cpp \-File \-Reference}
-\label{nms_8cpp}\index{/home/aindra/\-F\-R/src/\-F\-R/\-F\-R/detection/\-Parts\-Based\-Detector-\/master/src/nms.\-cpp@{/home/aindra/\-F\-R/src/\-F\-R/\-F\-R/detection/\-Parts\-Based\-Detector-\/master/src/nms.\-cpp}}
+\hypertarget{nms_8cpp}{\section{/home/vsrao/git-\/reps/facedetection/\-Parts\-Based\-Detector-\/master/src/nms.cpp File Reference}
+\label{nms_8cpp}\index{/home/vsrao/git-\/reps/facedetection/\-Parts\-Based\-Detector-\/master/src/nms.\-cpp@{/home/vsrao/git-\/reps/facedetection/\-Parts\-Based\-Detector-\/master/src/nms.\-cpp}}
 }
-{\ttfamily \#include $<$stdint.\-h$>$}\*
-{\ttfamily \#include $<$stdio.\-h$>$}\*
-{\ttfamily \#include $<$iostream$>$}\*
-{\ttfamily \#include $<$limits$>$}\*
-{\ttfamily \#include $<$opencv2/core/core.\-hpp$>$}\*
-{\ttfamily \#include $<$opencv2/imgproc/imgproc.\-hpp$>$}\*
-{\ttfamily \#include \char`\"{}../include/nms.\-hpp\char`\"{}}\*
-\subsection*{\-Functions}
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$limits$>$}\\*
+{\ttfamily \#include $<$opencv2/core/core.\-hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/imgproc/imgproc.\-hpp$>$}\\*
+{\ttfamily \#include \char`\"{}../include/nms.\-hpp\char`\"{}}\\*
+\subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{nms_8cpp_a8bd3246e5b9d2aeed8bafd6cffa711c4}{non\-Maxima\-Suppression} (const \-Mat \&src, const int sz, \-Mat \&dst, const \-Mat mask)
+void \hyperlink{nms_8cpp_a8bd3246e5b9d2aeed8bafd6cffa711c4}{non\-Maxima\-Suppression} (const Mat \&src, const int sz, Mat \&dst, const Mat mask)
 \begin{DoxyCompactList}\small\item\em suppress non-\/maximal values \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{\-Function \-Documentation}
+\subsection{Function Documentation}
 \hypertarget{nms_8cpp_a8bd3246e5b9d2aeed8bafd6cffa711c4}{\index{nms.\-cpp@{nms.\-cpp}!non\-Maxima\-Suppression@{non\-Maxima\-Suppression}}
 \index{non\-Maxima\-Suppression@{non\-Maxima\-Suppression}!nms.cpp@{nms.\-cpp}}
-\subsubsection[{non\-Maxima\-Suppression}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf non\-Maxima\-Suppression} (
+\subsubsection[{non\-Maxima\-Suppression}]{\setlength{\rightskip}{0pt plus 5cm}void non\-Maxima\-Suppression (
 \begin{DoxyParamCaption}
-\item[{const \-Mat \&}]{src, }
+\item[{const Mat \&}]{src, }
 \item[{const int}]{sz, }
-\item[{\-Mat \&}]{dst, }
-\item[{const \-Mat}]{mask}
+\item[{Mat \&}]{dst, }
+\item[{const Mat}]{mask}
 \end{DoxyParamCaption}
 )}}\label{nms_8cpp_a8bd3246e5b9d2aeed8bafd6cffa711c4}
 
 
 suppress non-\/maximal values 
 
-non\-Maxima\-Suppression produces a mask (dst) such that every non-\/zero value of the mask corresponds to a local maxima of src. \-The criteria for local maxima is as follows\-:
+non\-Maxima\-Suppression produces a mask (dst) such that every non-\/zero value of the mask corresponds to a local maxima of src. The criteria for local maxima is as follows\-:
 
-\-For every possible (sz x sz) region within src, an element is a local maxima of src iff it is strictly greater than all other elements of windows which intersect the given element
+For every possible (sz x sz) region within src, an element is a local maxima of src iff it is strictly greater than all other elements of windows which intersect the given element
 
-\-Intuitively, this means that all maxima must be at least sz+1 pixels apart, though the spacing may be greater
+Intuitively, this means that all maxima must be at least sz+1 pixels apart, though the spacing may be greater
 
-\-A gradient image or a constant image has no local maxima by the definition given above
+A gradient image or a constant image has no local maxima by the definition given above
 
-\-The method is derived from the following paper\-: \-A. \-Neubeck and \-L. \-Van \-Gool. \char`\"{}\-Efficient Non-\/\-Maximum Suppression,\char`\"{} \-I\-C\-P\-R 2006
+The method is derived from the following paper\-: A. Neubeck and L. Van Gool. \char`\"{}\-Efficient Non-\/\-Maximum Suppression,\char`\"{} I\-C\-P\-R 2006
 
-\-Example\-: 
+Example\-: 
 \begin{DoxyCode}
-        // create a random test image
-        Mat random(Size(2000,2000), DataType<float>::type);
-        randn(random, 1, 1);
+\textcolor{comment}{// create a random test image}
+Mat random(Size(2000,2000), DataType<float>::type);
+randn(random, 1, 1);
 
-        // only look for local maxima above the value of 1
-        Mat mask = (random > 1);
+\textcolor{comment}{// only look for local maxima above the value of 1}
+Mat mask = (random > 1);
 
-        // find the local maxima with a window of 50
-        Mat maxima;
-        nonMaximaSuppression(random, 50, maxima, mask);
+\textcolor{comment}{// find the local maxima with a window of 50}
+Mat maxima;
+\hyperlink{nms_8cpp_a8bd3246e5b9d2aeed8bafd6cffa711c4}{nonMaximaSuppression}(random, 50, maxima, mask);
 
-        // optionally set all non-maxima to zero
-        random.setTo(0, maxima == 0);
+\textcolor{comment}{// optionally set all non-maxima to zero}
+random.setTo(0, maxima == 0);
 \end{DoxyCode}
 
 
 
-\begin{DoxyParams}{\-Parameters}
+\begin{DoxyParams}{Parameters}
 {\em src} & the input image/matrix, of any valid cv type \\
 \hline
 {\em sz} & the size of the window \\
 \hline
-{\em dst} & the mask of type \-C\-V\-\_\-8\-U, where non-\/zero elements correspond to local maxima of the src \\
+{\em dst} & the mask of type C\-V\-\_\-8\-U, where non-\/zero elements correspond to local maxima of the src \\
 \hline
 {\em mask} & an input mask to skip particular elements \\
 \hline
