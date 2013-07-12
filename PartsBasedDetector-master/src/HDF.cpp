@@ -89,12 +89,15 @@ vectorMat& HDF::scores(int n)
     return scores_;
 }
 
-int HDF::populateFile(cv::Mat datamat, int totalRows)
+int HDF::populateFile(cv::Mat response)
 {
   hsize_t s[2];
   s[0] = size_ + 1;
   s[1] = maxCols; 
-  int arrsize = datamat.cols;  
+  int totalCols = response.cols;
+  int totalRows = response.rows;
+  cv::Mat datamat = response.reshape(0,1);
+  int arrsize = datamat.cols;
   float data[arrsize];
   for (int i=0; i<arrsize; i++) {
       data[i] = datamat.at<float>(i);
@@ -113,7 +116,7 @@ int HDF::populateFile(cv::Mat datamat, int totalRows)
   /* Write the data to the extended portion of dataset  */
   status = H5Dwrite (dataset, H5T_NATIVE_INT, memspace, filespace,
 		  H5P_DEFAULT, data);
-  size_s size = {totalRows, arrsize};
+  size_s size = {totalRows, totalCols};
   sizeid[size_] = size;
   size_ += 1;
 }

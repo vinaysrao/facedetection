@@ -30,7 +30,7 @@ class HDF
         HDF();
         HDF(int M, int N, int initialSize);
         virtual ~HDF();
-        int populateFile(cv::Mat datamat,int totalRows);
+        int populateFile(cv::Mat response);
         int size();
         int rowSize();
         vectorMat& scores(int n);

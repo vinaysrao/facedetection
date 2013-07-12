@@ -101,10 +101,7 @@ void SpatialConvolutionEngine::pdf(const vectorMat& features, HDF& hdf) {
 		for (unsigned int m = 0; m < M; ++m) {
 			Mat response;
 			convolve(features[m], filters_[n], response, flen_);
-            int totalRows = response.rows;
-            for (int i=0; i<totalRows; i++) {
-                hdf.populateFile(response.row(i), totalRows);
-            }
+			hdf.populateFile(response);
 			
 		}
 	}
