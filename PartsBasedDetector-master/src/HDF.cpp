@@ -46,7 +46,7 @@ HDF::~HDF()
 
 int HDF::size()
 {
-    return size_;
+    return M;
 }
 
 int HDF::rowSize()

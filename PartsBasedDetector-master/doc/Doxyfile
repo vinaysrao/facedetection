@@ -1,8 +1,8 @@
 # --------------------
 # Project settings
 PROJECT_NAME            = PartsBasedDetector
-INPUT                   = /home/ankit/FR/detection/facedetection/PartsBasedDetector-master/src /home/ankit/FR/detection/facedetection/PartsBasedDetector-master/include
-OUTPUT_DIRECTORY        = /home/ankit/FR/detection/facedetection/PartsBasedDetector-master/doc
+INPUT                   = /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/include
+OUTPUT_DIRECTORY        = /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/doc
 
 # --------------------
 # Output DOC types

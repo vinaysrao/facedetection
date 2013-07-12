@@ -14,18 +14,6 @@ map
 types.hpp
 ../include/types.hpp
 
-../include/IConvolutionEngine.hpp
-HDF.hpp
-../include/HDF.hpp
-types.hpp
-../include/types.hpp
-
-../include/SpatialConvolutionEngine.hpp
-HDF.hpp
-../include/HDF.hpp
-IConvolutionEngine.hpp
-../include/IConvolutionEngine.hpp
-
 ../include/types.hpp
 vector
 -
@@ -34,23 +22,17 @@ opencv2/core/core.hpp
 opencv2/imgproc/imgproc.hpp
 -
 
-/home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src/SpatialConvolutionEngine.cpp
-omp.h
--
-math.h
--
-assert.h
--
-iostream
--
-fstream
--
+/home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src/HDF.cpp
 opencv2/core/core.hpp
 -
 opencv2/imgproc/imgproc.hpp
 -
-SpatialConvolutionEngine.hpp
-/home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src/SpatialConvolutionEngine.hpp
+hdf5.h
+-
 HDF.hpp
 /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src/HDF.hpp
+types.hpp
+/home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src/types.hpp
+iostream
+-
 
