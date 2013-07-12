@@ -7,7 +7,7 @@
 
 #ifndef SPATIALCONVOLUTIONENGINE_HPP_
 #define SPATIALCONVOLUTIONENGINE_HPP_
-
+#include "HDF.hpp"
 #include "IConvolutionEngine.hpp"
 
 class SpatialConvolutionEngine: public IConvolutionEngine {
@@ -23,7 +23,9 @@ public:
 	SpatialConvolutionEngine(int type, unsigned int flen);
 	virtual ~SpatialConvolutionEngine();
 	virtual void setFilters(const vectorMat& filters);
-	virtual void pdf(const vectorMat& features, vector2DMat& responses);
+	virtual void pdf(const vectorMat& features, HDF& hdf);
+    virtual int getFlen();
+    virtual int getFilterSize();
 };
 
 #endif /* SPATIALCONVOLUTIONENGINE_HPP_ */

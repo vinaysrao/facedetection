@@ -38,7 +38,7 @@
 
 #ifndef ICONVOLUTIONENGINE_HPP_
 #define ICONVOLUTIONENGINE_HPP_
-
+#include "HDF.hpp"
 #include "types.hpp"
 
 class IConvolutionEngine {
@@ -53,7 +53,7 @@ public:
 	 * @param features the input pyramid of features
 	 * @param responses a 2D vector of pdfs, 1st dimension across scale, 2nd dimension across filter
 	 */
-	virtual void pdf(const vectorMat& features, vector2DMat& responses) = 0;
+	virtual void pdf(const vectorMat& features, HDF& hdf) = 0;
 
 	/*! @brief set the convolve engine filters
 	 *
@@ -65,6 +65,8 @@ public:
 	 * @param filters the vector of filters
 	 */
 	virtual void setFilters(const vectorMat& filters) = 0;
+    virtual int getFlen() = 0;
+    virtual int getFilterSize() = 0;
 };
 
 

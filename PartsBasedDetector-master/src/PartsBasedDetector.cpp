@@ -36,10 +36,11 @@
  *  Created: Jun 21, 2012
  */
 
-#include "../include/PartsBasedDetector.hpp"
-#include "../include/nms.hpp"
-#include "../include/HOGFeatures.hpp"
-#include "../include/SpatialConvolutionEngine.hpp"
+#include "PartsBasedDetector.hpp"
+#include "nms.hpp"
+#include "HOGFeatures.hpp"
+#include "SpatialConvolutionEngine.hpp"
+#include "HDF.hpp"
 #include <cstdio>
 using namespace cv;
 using namespace std;
@@ -76,13 +77,18 @@ void PartsBasedDetector<T>::detect(const Mat& im, const Mat& depth, vectorCandid
 	// convolve the feature pyramid with the Part experts
 	// to get probability density for each Part
 	vector2DMat pdf;
+    int M = pyramid.size();
+    int N = convolution_engine_->getFilterSize();
+    int initialSize = pyramid[0].cols /  convolution_engine_->getFlen();
+    
+    HDF hdf(M,N,initialSize);
 	cout<< "going into pdf function" << endl;
-	convolution_engine_->pdf(pyramid, pdf);
+	convolution_engine_->pdf(pyramid, hdf);
 	cout << "convolution done" << endl;
 	// use dynamic programming to predict the best detection candidates from the part responses
 	vector4DMat Ix, Iy, Ik;
 	vector2DMat rootv, rooti;
-	dp_.min(parts_, pdf, Ix, Iy, Ik, rootv, rooti);
+	dp_.min(parts_, hdf, Ix, Iy, Ik, rootv, rooti);
 	cout << "dp_min done" << endl;
 	// suppress non-maximal candidates
 	//ssp_.nonMaxSuppression(rootv, features_->scales());

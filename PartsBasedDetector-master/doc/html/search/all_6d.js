@@ -8,6 +8,7 @@ var searchData=
   ['matlabiomodel',['MatlabIOModel',['../classMatlabIOModel.html',1,'MatlabIOModel'],['../classMatlabIOModel.html#ac4e387c6665a094f985b0ca0c37b1aee',1,'MatlabIOModel::MatlabIOModel()']]],
   ['matlabiomodel_2ecpp',['MatlabIOModel.cpp',['../MatlabIOModel_8cpp.html',1,'']]],
   ['matlabiomodel_2ehpp',['MatlabIOModel.hpp',['../MatlabIOModel_8hpp.html',1,'']]],
+  ['maxcols',['maxCols',['../classHDF.html#a5cd5534b56df9e71611cbc463f2e8604',1,'HDF']]],
   ['median',['median',['../classMath.html#aca890c10f12205897ac47792494d149f',1,'Math']]],
   ['metrics',['Metrics',['../classMetrics.html',1,'']]],
   ['metrics_2ehpp',['Metrics.hpp',['../Metrics_8hpp.html',1,'']]],

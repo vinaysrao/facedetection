@@ -112,27 +112,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classHDF.html#ab7e91e3f89c7fb189e0b0d9705d2f569">   23</a></span>&#160;        hid_t <a class="code" href="classHDF.html#ab7e91e3f89c7fb189e0b0d9705d2f569">file</a>, <a class="code" href="classHDF.html#adc37f93332228a0d29d1d0b8f7021b0c">dataset</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classHDF.html#a5fcc08146bef981eb0c865e01f8578a3">   24</a></span>&#160;        hsize_t <a class="code" href="classHDF.html#a5fcc08146bef981eb0c865e01f8578a3">data_size</a>[2];</div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classHDF.html#a9b95020b5a2be0e7d2930c1221df9aa4">   25</a></span>&#160;        std::string <a class="code" href="classHDF.html#a9b95020b5a2be0e7d2930c1221df9aa4">datasetname</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classHDF.html#a9a4c71b47bab1ce6053362848828e8b0">   26</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classHDF.html#a9a4c71b47bab1ce6053362848828e8b0">prevRows</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classHDF.html#afcedff6f9548bada3d9ad4121bff726e">   27</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classHDF.html#afcedff6f9548bada3d9ad4121bff726e">filledOffset</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classHDF.html#a5cd5534b56df9e71611cbc463f2e8604">   26</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classHDF.html#a5cd5534b56df9e71611cbc463f2e8604">maxCols</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classHDF.html#a699a9f1244c7498da0559a4896b9db75">   27</a></span>&#160;        <a class="code" href="types_8hpp.html#a3207a7addcfa415d1c83622febcb1e9b">vectorMat</a> <a class="code" href="classHDF.html#a699a9f1244c7498da0559a4896b9db75">scores_</a>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classHDF.html#a1e33708a192cf30a7bf826b5d53d42cd">HDF</a>();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classHDF.html#a1e33708a192cf30a7bf826b5d53d42cd">HDF</a>(<span class="keywordtype">int</span> <a class="code" href="classHDF.html#aee1593ceda7b33a941e52e9f6e998f51">M</a>, <span class="keywordtype">int</span> <a class="code" href="classHDF.html#ab3b5c9aa5d584ac3aa16ee9c6d04c340">N</a>, <span class="keywordtype">int</span> initialSize);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classHDF.html#ad204a0f509d106b76dac0cef51eba755">~HDF</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classHDF.html#af991e83807876fa0029b70b5c9a998b3">populateFile</a>(<span class="keywordtype">int</span> data[],<span class="keywordtype">int</span> arrsize);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classHDF.html#a89957a979d25bdc0c320a967698e01b3">populateFile</a>(cv::Mat datamat,<span class="keywordtype">int</span> totalRows);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classHDF.html#a33415e3a4a7b17ab5530db3335b5c6f6">size</a>();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classHDF.html#a131cb3f6cc240a55a2bfa903c7eaff19">rowSize</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="types_8hpp.html#a3207a7addcfa415d1c83622febcb1e9b">vectorMat</a> <a class="code" href="classHDF.html#a99fee1b4aa1d3d6e4a667831e108945a">scores</a>(<span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="types_8hpp.html#a3207a7addcfa415d1c83622febcb1e9b">vectorMat</a>&amp; <a class="code" href="classHDF.html#acac60e7d2930dead3a3ccb74bb762f6f">scores</a>(<span class="keywordtype">int</span> n);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">//scores[n]</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="types_8hpp.html#a3207a7addcfa415d1c83622febcb1e9b">vectorMat</a> <a class="code" href="classHDF.html#a422ba198c00f10a40ff4e262a9925f10">operator[] </a>(<span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="types_8hpp.html#a3207a7addcfa415d1c83622febcb1e9b">vectorMat</a>&amp; <a class="code" href="classHDF.html#a35b467f435cf7b954bcf83b729553f82">operator[] </a>(<span class="keywordtype">int</span> n);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif //IFDEF</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 11 2013 21:00:54 for PartsBasedDetector by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 12 2013 11:02:09 for PartsBasedDetector by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

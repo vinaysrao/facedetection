@@ -20,12 +20,16 @@ virtual \hyperlink{classSpatialConvolutionEngine_a07b28be0c28a1c47bc6f2a74591558
 \item 
 virtual void \hyperlink{classSpatialConvolutionEngine_ad27aad7b65dfa3ec6a617eed96c01d9c}{set\-Filters} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&filters)
 \begin{DoxyCompactList}\small\item\em set the filters \end{DoxyCompactList}\item 
-virtual void \hyperlink{classSpatialConvolutionEngine_a6db3b5e9428ee74e1b4e9e7f7111cad5}{pdf} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&features, \hyperlink{types_8hpp_a33cacb85be7b8df3dc0b67d5d849f4cc}{vector2\-D\-Mat} \&responses)
-\begin{DoxyCompactList}\small\item\em Calculate the responses of a set of features to a set of filter experts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \hyperlink{classSpatialConvolutionEngine_af563e1f3d82b37b51cefb48a32b8247c}{pdf} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&features, \hyperlink{classHDF}{H\-D\-F} \&hdf)
+\begin{DoxyCompactList}\small\item\em Calculate the responses of a set of features to a set of filter experts. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classSpatialConvolutionEngine_ac44ef96556679956f109fdae5bd25b38}{get\-Flen} ()
+\item 
+virtual int \hyperlink{classSpatialConvolutionEngine_a482075ebca8ddd3e2b777d22411864f1}{get\-Filter\-Size} ()
+\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classSpatialConvolutionEngine_ad8c6f9769f4061314ebf06f26947a82e}{convolve} (const cv\-::\-Mat \&feature, \hyperlink{types_8hpp_a429d786862fa9bc087b66651599c66dd}{vector\-Filter\-Engine} \&filter, cv\-::\-Mat \&\hyperlink{classSpatialConvolutionEngine_a6db3b5e9428ee74e1b4e9e7f7111cad5}{pdf}, const unsigned int stride)
+void \hyperlink{classSpatialConvolutionEngine_ad8c6f9769f4061314ebf06f26947a82e}{convolve} (const cv\-::\-Mat \&feature, \hyperlink{types_8hpp_a429d786862fa9bc087b66651599c66dd}{vector\-Filter\-Engine} \&filter, cv\-::\-Mat \&\hyperlink{classSpatialConvolutionEngine_af563e1f3d82b37b51cefb48a32b8247c}{pdf}, const unsigned int stride)
 \begin{DoxyCompactList}\small\item\em Convolve two matrices, with a stride of greater than one. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -86,14 +90,36 @@ The function supports multithreading via Open\-M\-P
 {\em stride} & the S\-V\-M weight length \\
 \hline
 \end{DoxyParams}
-\hypertarget{classSpatialConvolutionEngine_a6db3b5e9428ee74e1b4e9e7f7111cad5}{\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!pdf@{pdf}}
+\hypertarget{classSpatialConvolutionEngine_a482075ebca8ddd3e2b777d22411864f1}{\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!get\-Filter\-Size@{get\-Filter\-Size}}
+\index{get\-Filter\-Size@{get\-Filter\-Size}!SpatialConvolutionEngine@{Spatial\-Convolution\-Engine}}
+\subsubsection[{get\-Filter\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int Spatial\-Convolution\-Engine\-::get\-Filter\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classSpatialConvolutionEngine_a482075ebca8ddd3e2b777d22411864f1}
+
+
+Implements \hyperlink{classIConvolutionEngine_a97fa06032937448efc6b50d4210b758b}{I\-Convolution\-Engine}.
+
+\hypertarget{classSpatialConvolutionEngine_ac44ef96556679956f109fdae5bd25b38}{\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!get\-Flen@{get\-Flen}}
+\index{get\-Flen@{get\-Flen}!SpatialConvolutionEngine@{Spatial\-Convolution\-Engine}}
+\subsubsection[{get\-Flen}]{\setlength{\rightskip}{0pt plus 5cm}int Spatial\-Convolution\-Engine\-::get\-Flen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classSpatialConvolutionEngine_ac44ef96556679956f109fdae5bd25b38}
+
+
+Implements \hyperlink{classIConvolutionEngine_aba18cf7c79b1d0aa59184321b3c44f45}{I\-Convolution\-Engine}.
+
+\hypertarget{classSpatialConvolutionEngine_af563e1f3d82b37b51cefb48a32b8247c}{\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!pdf@{pdf}}
 \index{pdf@{pdf}!SpatialConvolutionEngine@{Spatial\-Convolution\-Engine}}
 \subsubsection[{pdf}]{\setlength{\rightskip}{0pt plus 5cm}void Spatial\-Convolution\-Engine\-::pdf (
 \begin{DoxyParamCaption}
 \item[{const {\bf vector\-Mat} \&}]{features, }
-\item[{{\bf vector2\-D\-Mat} \&}]{responses}
+\item[{{\bf H\-D\-F} \&}]{hdf}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classSpatialConvolutionEngine_a6db3b5e9428ee74e1b4e9e7f7111cad5}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classSpatialConvolutionEngine_af563e1f3d82b37b51cefb48a32b8247c}
 
 
 Calculate the responses of a set of features to a set of filter experts. 
@@ -107,7 +133,7 @@ A response represents the likelihood of the part appearing at each location of t
 \end{DoxyParams}
 
 
-Implements \hyperlink{classIConvolutionEngine_ab5aaabb634629a714d397a6c1a9c9400}{I\-Convolution\-Engine}.
+Implements \hyperlink{classIConvolutionEngine_a000909b784828ec3f94397300ca67803}{I\-Convolution\-Engine}.
 
 \hypertarget{classSpatialConvolutionEngine_ad27aad7b65dfa3ec6a617eed96c01d9c}{\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!set\-Filters@{set\-Filters}}
 \index{set\-Filters@{set\-Filters}!SpatialConvolutionEngine@{Spatial\-Convolution\-Engine}}

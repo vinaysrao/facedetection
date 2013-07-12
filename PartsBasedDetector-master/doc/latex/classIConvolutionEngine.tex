@@ -16,10 +16,14 @@ Inheritance diagram for I\-Convolution\-Engine\-:\begin{figure}[H]
 \item 
 virtual \hyperlink{classIConvolutionEngine_a554cb87e8dbd32552defd43549b9c1b3}{$\sim$\-I\-Convolution\-Engine} ()
 \item 
-virtual void \hyperlink{classIConvolutionEngine_ab5aaabb634629a714d397a6c1a9c9400}{pdf} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&features, \hyperlink{types_8hpp_a33cacb85be7b8df3dc0b67d5d849f4cc}{vector2\-D\-Mat} \&responses)=0
+virtual void \hyperlink{classIConvolutionEngine_a000909b784828ec3f94397300ca67803}{pdf} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&features, \hyperlink{classHDF}{H\-D\-F} \&hdf)=0
 \begin{DoxyCompactList}\small\item\em probability density function \end{DoxyCompactList}\item 
 virtual void \hyperlink{classIConvolutionEngine_a3570aae351b5fcb93bcd87a06c65ea0a}{set\-Filters} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&filters)=0
-\begin{DoxyCompactList}\small\item\em set the convolve engine filters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em set the convolve engine filters \end{DoxyCompactList}\item 
+virtual int \hyperlink{classIConvolutionEngine_aba18cf7c79b1d0aa59184321b3c44f45}{get\-Flen} ()=0
+\item 
+virtual int \hyperlink{classIConvolutionEngine_a97fa06032937448efc6b50d4210b758b}{get\-Filter\-Size} ()=0
+\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -33,14 +37,36 @@ virtual void \hyperlink{classIConvolutionEngine_a3570aae351b5fcb93bcd87a06c65ea0
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classIConvolutionEngine_ab5aaabb634629a714d397a6c1a9c9400}{\index{I\-Convolution\-Engine@{I\-Convolution\-Engine}!pdf@{pdf}}
+\hypertarget{classIConvolutionEngine_a97fa06032937448efc6b50d4210b758b}{\index{I\-Convolution\-Engine@{I\-Convolution\-Engine}!get\-Filter\-Size@{get\-Filter\-Size}}
+\index{get\-Filter\-Size@{get\-Filter\-Size}!IConvolutionEngine@{I\-Convolution\-Engine}}
+\subsubsection[{get\-Filter\-Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual int I\-Convolution\-Engine\-::get\-Filter\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classIConvolutionEngine_a97fa06032937448efc6b50d4210b758b}
+
+
+Implemented in \hyperlink{classSpatialConvolutionEngine_a482075ebca8ddd3e2b777d22411864f1}{Spatial\-Convolution\-Engine}.
+
+\hypertarget{classIConvolutionEngine_aba18cf7c79b1d0aa59184321b3c44f45}{\index{I\-Convolution\-Engine@{I\-Convolution\-Engine}!get\-Flen@{get\-Flen}}
+\index{get\-Flen@{get\-Flen}!IConvolutionEngine@{I\-Convolution\-Engine}}
+\subsubsection[{get\-Flen}]{\setlength{\rightskip}{0pt plus 5cm}virtual int I\-Convolution\-Engine\-::get\-Flen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classIConvolutionEngine_aba18cf7c79b1d0aa59184321b3c44f45}
+
+
+Implemented in \hyperlink{classSpatialConvolutionEngine_ac44ef96556679956f109fdae5bd25b38}{Spatial\-Convolution\-Engine}.
+
+\hypertarget{classIConvolutionEngine_a000909b784828ec3f94397300ca67803}{\index{I\-Convolution\-Engine@{I\-Convolution\-Engine}!pdf@{pdf}}
 \index{pdf@{pdf}!IConvolutionEngine@{I\-Convolution\-Engine}}
 \subsubsection[{pdf}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\-Convolution\-Engine\-::pdf (
 \begin{DoxyParamCaption}
 \item[{const {\bf vector\-Mat} \&}]{features, }
-\item[{{\bf vector2\-D\-Mat} \&}]{responses}
+\item[{{\bf H\-D\-F} \&}]{hdf}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classIConvolutionEngine_ab5aaabb634629a714d397a6c1a9c9400}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classIConvolutionEngine_a000909b784828ec3f94397300ca67803}
 
 
 probability density function 
@@ -59,7 +85,7 @@ probability density function
 \end{DoxyParams}
 
 
-Implemented in \hyperlink{classSpatialConvolutionEngine_a6db3b5e9428ee74e1b4e9e7f7111cad5}{Spatial\-Convolution\-Engine}.
+Implemented in \hyperlink{classSpatialConvolutionEngine_af563e1f3d82b37b51cefb48a32b8247c}{Spatial\-Convolution\-Engine}.
 
 \hypertarget{classIConvolutionEngine_a3570aae351b5fcb93bcd87a06c65ea0a}{\index{I\-Convolution\-Engine@{I\-Convolution\-Engine}!set\-Filters@{set\-Filters}}
 \index{set\-Filters@{set\-Filters}!IConvolutionEngine@{I\-Convolution\-Engine}}

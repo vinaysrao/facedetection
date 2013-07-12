@@ -14,10 +14,9 @@
 #include <fstream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#include "../include/SpatialConvolutionEngine.hpp"
-#include <hdf5.h>
-#include <hdf5_hl.h>
-#include "../include/HDF.hpp"
+#include "SpatialConvolutionEngine.hpp"
+
+#include "HDF.hpp"
 using namespace std;
 using namespace cv;
 
@@ -68,7 +67,14 @@ void SpatialConvolutionEngine::convolve(const Mat& feature, vectorFilterEngine& 
 	cout<< "exit convolve" << endl;
 	
 }
+ 
+int SpatialConvolutionEngine::getFlen() {
+    return flen_;
+}
 
+int SpatialConvolutionEngine::getFilterSize() {
+    return filters_.size();
+}
 
 /*! @brief Calculate the responses of a set of features to a set of filter experts
  *
@@ -79,33 +85,27 @@ void SpatialConvolutionEngine::convolve(const Mat& feature, vectorFilterEngine& 
  * @param features the input features (at different scales, and by extension, size)
  * @param responses the vector of responses (pdfs) to return
  */
-void SpatialConvolutionEngine::pdf(const vectorMat& features, vector2DMat& responses) {
+void SpatialConvolutionEngine::pdf(const vectorMat& features, HDF& hdf) {
 	cout<< "enter pdf function" << endl;
 	// preallocate the output
 	const unsigned int M = features.size();
 	const unsigned int N = filters_.size();
-	responses.resize(M, vectorMat(N));
 	// iterate
 #ifdef _OPENMP
 	omp_set_num_threads(8);
 	#pragma omp parallel for
 #endif
 	
-	int inititalSize = features[0].cols;
-	cout << "init" << inititalSize<< endl;
-	HDF hdf(M,N, inititalSize);
 	
-	cout<< "enter the scary loop" << endl;
 	for (unsigned int n = 0; n < N; ++n) {
 		for (unsigned int m = 0; m < M; ++m) {
 			Mat response;
 			convolve(features[m], filters_[n], response, flen_);
-			responses[m][n] = response;
-			cout<<"response "<<response.cols<< " " << response.rows<<" " << M << " " << N << features[m].size() << endl;
-// 			cout << response.at<int>(0,0) <<" "<<response.at<int>(0,1)<< endl;
-			int *data= (int*)(response.row(0).data);
-			hdf.populateFile(data, response.cols);
-			exit(1);
+            int totalRows = response.rows;
+            for (int i=0; i<totalRows; i++) {
+                hdf.populateFile(response.row(i), totalRows);
+            }
+			
 		}
 	}
 	cout<< "scary loop done" << endl;

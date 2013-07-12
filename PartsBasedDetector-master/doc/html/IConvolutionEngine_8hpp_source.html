@@ -127,25 +127,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifndef ICONVOLUTIONENGINE_HPP_</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ICONVOLUTIONENGINE_HPP_</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="HDF_8hpp.html">HDF.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="types_8hpp.html">types.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="classIConvolutionEngine.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="classIConvolutionEngine.html">IConvolutionEngine</a> {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="classIConvolutionEngine.html#a554cb87e8dbd32552defd43549b9c1b3">   46</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classIConvolutionEngine.html#a554cb87e8dbd32552defd43549b9c1b3">~IConvolutionEngine</a>() {}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIConvolutionEngine.html#ab5aaabb634629a714d397a6c1a9c9400" title="probability density function">pdf</a>(<span class="keyword">const</span> <a class="code" href="types_8hpp.html#a3207a7addcfa415d1c83622febcb1e9b">vectorMat</a>&amp; features, <a class="code" href="types_8hpp.html#a33cacb85be7b8df3dc0b67d5d849f4cc">vector2DMat</a>&amp; responses) = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIConvolutionEngine.html#a000909b784828ec3f94397300ca67803" title="probability density function">pdf</a>(<span class="keyword">const</span> <a class="code" href="types_8hpp.html#a3207a7addcfa415d1c83622febcb1e9b">vectorMat</a>&amp; features, <a class="code" href="classHDF.html">HDF</a>&amp; hdf) = 0;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIConvolutionEngine.html#a3570aae351b5fcb93bcd87a06c65ea0a" title="set the convolve engine filters">setFilters</a>(<span class="keyword">const</span> <a class="code" href="types_8hpp.html#a3207a7addcfa415d1c83622febcb1e9b">vectorMat</a>&amp; filters) = 0;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classIConvolutionEngine.html#aba18cf7c79b1d0aa59184321b3c44f45">getFlen</a>() = 0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classIConvolutionEngine.html#a97fa06032937448efc6b50d4210b758b">getFilterSize</a>() = 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ICONVOLUTIONENGINE_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ICONVOLUTIONENGINE_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 11 2013 21:00:54 for PartsBasedDetector by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 12 2013 11:02:09 for PartsBasedDetector by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

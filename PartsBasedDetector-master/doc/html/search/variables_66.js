@@ -2,7 +2,6 @@ var searchData=
 [
   ['features_5f',['features_',['../classPartsBasedDetector.html#a6242f9b02fcb1a440cc431f2fc15521f',1,'PartsBasedDetector']]],
   ['file',['file',['../classHDF.html#ab7e91e3f89c7fb189e0b0d9705d2f569',1,'HDF']]],
-  ['filledoffset',['filledOffset',['../classHDF.html#afcedff6f9548bada3d9ad4121bff726e',1,'HDF']]],
   ['filterid_5f',['filterid_',['../classModel.html#a08e65111230ab010535cc9485dfd6d0d',1,'Model::filterid_()'],['../classComponentPart.html#aba9023613a7dd450b2403fd7c1e708ec',1,'ComponentPart::filterid_()'],['../classParts.html#a7302a31cd5f88443490e8f81a2c422bb',1,'Parts::filterid_()']]],
   ['filters_5f',['filters_',['../classSpatialConvolutionEngine.html#aec615ebfbedc8b7812481be1c2bcb1e5',1,'SpatialConvolutionEngine']]],
   ['filtersi_5f',['filtersi_',['../classModel.html#ab3f13d90cc96c70d4b454db12528f85f',1,'Model::filtersi_()'],['../classComponentPart.html#ab27e6ea4e7d5b1342ca8b55afa797da9',1,'ComponentPart::filtersi_()'],['../classParts.html#a42065797f04fdd863286bd01ce210dae',1,'Parts::filtersi_()']]],

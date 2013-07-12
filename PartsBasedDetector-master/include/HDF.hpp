@@ -23,20 +23,20 @@ class HDF
         hid_t file, dataset;
         hsize_t data_size[2];
         std::string datasetname;
-        int prevRows;
-        int filledOffset;
+        int maxCols;
+        vectorMat scores_;
 
     public:
         HDF();
         HDF(int M, int N, int initialSize);
         virtual ~HDF();
-        int populateFile(int data[],int arrsize);
+        int populateFile(cv::Mat datamat,int totalRows);
         int size();
         int rowSize();
-        vectorMat scores(int n);
+        vectorMat& scores(int n);
 
         //scores[n]
-        vectorMat operator[] (int n);
+        vectorMat& operator[] (int n);
 };
 
 #endif //IFDEF

@@ -6,6 +6,7 @@ src/CMakeFiles/PartsBasedDetector_bin.dir/demo.cpp.o: ../src/../include/Candidat
 src/CMakeFiles/PartsBasedDetector_bin.dir/demo.cpp.o: ../src/../include/DistanceTransform.hpp
 src/CMakeFiles/PartsBasedDetector_bin.dir/demo.cpp.o: ../src/../include/DynamicProgram.hpp
 src/CMakeFiles/PartsBasedDetector_bin.dir/demo.cpp.o: ../src/../include/FileStorageModel.hpp
+src/CMakeFiles/PartsBasedDetector_bin.dir/demo.cpp.o: ../src/../include/HDF.hpp
 src/CMakeFiles/PartsBasedDetector_bin.dir/demo.cpp.o: ../src/../include/IConvolutionEngine.hpp
 src/CMakeFiles/PartsBasedDetector_bin.dir/demo.cpp.o: ../src/../include/IFeatures.hpp
 src/CMakeFiles/PartsBasedDetector_bin.dir/demo.cpp.o: ../src/../include/Math.hpp

@@ -7,6 +7,7 @@ src/CMakeFiles/PartsBasedDetector_bin.dir/demo.cpp.o
  /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src/../include/DistanceTransform.hpp
  /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src/../include/DynamicProgram.hpp
  /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src/../include/FileStorageModel.hpp
+ /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src/../include/HDF.hpp
  /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src/../include/IConvolutionEngine.hpp
  /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src/../include/IFeatures.hpp
  /home/vsrao/git-reps/facedetection/PartsBasedDetector-master/src/../include/Math.hpp

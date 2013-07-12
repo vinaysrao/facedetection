@@ -103,12 +103,16 @@ Inheritance diagram for IConvolutionEngine:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a554cb87e8dbd32552defd43549b9c1b3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIConvolutionEngine.html#a554cb87e8dbd32552defd43549b9c1b3">~IConvolutionEngine</a> ()</td></tr>
 <tr class="separator:a554cb87e8dbd32552defd43549b9c1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5aaabb634629a714d397a6c1a9c9400"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIConvolutionEngine.html#ab5aaabb634629a714d397a6c1a9c9400">pdf</a> (const <a class="el" href="types_8hpp.html#a3207a7addcfa415d1c83622febcb1e9b">vectorMat</a> &amp;features, <a class="el" href="types_8hpp.html#a33cacb85be7b8df3dc0b67d5d849f4cc">vector2DMat</a> &amp;responses)=0</td></tr>
-<tr class="memdesc:ab5aaabb634629a714d397a6c1a9c9400"><td class="mdescLeft">&#160;</td><td class="mdescRight">probability density function  <a href="#ab5aaabb634629a714d397a6c1a9c9400">More...</a><br/></td></tr>
-<tr class="separator:ab5aaabb634629a714d397a6c1a9c9400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a000909b784828ec3f94397300ca67803"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIConvolutionEngine.html#a000909b784828ec3f94397300ca67803">pdf</a> (const <a class="el" href="types_8hpp.html#a3207a7addcfa415d1c83622febcb1e9b">vectorMat</a> &amp;features, <a class="el" href="classHDF.html">HDF</a> &amp;hdf)=0</td></tr>
+<tr class="memdesc:a000909b784828ec3f94397300ca67803"><td class="mdescLeft">&#160;</td><td class="mdescRight">probability density function  <a href="#a000909b784828ec3f94397300ca67803">More...</a><br/></td></tr>
+<tr class="separator:a000909b784828ec3f94397300ca67803"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3570aae351b5fcb93bcd87a06c65ea0a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIConvolutionEngine.html#a3570aae351b5fcb93bcd87a06c65ea0a">setFilters</a> (const <a class="el" href="types_8hpp.html#a3207a7addcfa415d1c83622febcb1e9b">vectorMat</a> &amp;filters)=0</td></tr>
 <tr class="memdesc:a3570aae351b5fcb93bcd87a06c65ea0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the convolve engine filters  <a href="#a3570aae351b5fcb93bcd87a06c65ea0a">More...</a><br/></td></tr>
 <tr class="separator:a3570aae351b5fcb93bcd87a06c65ea0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba18cf7c79b1d0aa59184321b3c44f45"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIConvolutionEngine.html#aba18cf7c79b1d0aa59184321b3c44f45">getFlen</a> ()=0</td></tr>
+<tr class="separator:aba18cf7c79b1d0aa59184321b3c44f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97fa06032937448efc6b50d4210b758b"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIConvolutionEngine.html#a97fa06032937448efc6b50d4210b758b">getFilterSize</a> ()=0</td></tr>
+<tr class="separator:a97fa06032937448efc6b50d4210b758b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a554cb87e8dbd32552defd43549b9c1b3"></a>
@@ -135,7 +139,57 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ab5aaabb634629a714d397a6c1a9c9400"></a>
+<a class="anchor" id="a97fa06032937448efc6b50d4210b758b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int IConvolutionEngine::getFilterSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classSpatialConvolutionEngine.html#a482075ebca8ddd3e2b777d22411864f1">SpatialConvolutionEngine</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aba18cf7c79b1d0aa59184321b3c44f45"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int IConvolutionEngine::getFlen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classSpatialConvolutionEngine.html#ac44ef96556679956f109fdae5bd25b38">SpatialConvolutionEngine</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a000909b784828ec3f94397300ca67803"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -151,8 +205,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="types_8hpp.html#a33cacb85be7b8df3dc0b67d5d849f4cc">vector2DMat</a> &amp;&#160;</td>
-          <td class="paramname"><em>responses</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="classHDF.html">HDF</a> &amp;&#160;</td>
+          <td class="paramname"><em>hdf</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -178,7 +232,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classSpatialConvolutionEngine.html#a6db3b5e9428ee74e1b4e9e7f7111cad5">SpatialConvolutionEngine</a>.</p>
+<p>Implemented in <a class="el" href="classSpatialConvolutionEngine.html#af563e1f3d82b37b51cefb48a32b8247c">SpatialConvolutionEngine</a>.</p>
 
 </div>
 </div>
@@ -226,7 +280,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 11 2013 21:00:54 for PartsBasedDetector by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 12 2013 11:02:10 for PartsBasedDetector by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

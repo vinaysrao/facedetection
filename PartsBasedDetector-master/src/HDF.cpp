@@ -11,8 +11,7 @@ using namespace std;
 
 HDF::HDF(int M, int N, int initialSize)
 {
-    this->filledOffset=0;
-    this->prevRows=0;
+      
     this->M = M;
     this->N = N;
     string filename("tmp.h5");
@@ -22,6 +21,7 @@ HDF::HDF(int M, int N, int initialSize)
     rank = 2;
     data_size[0] = 1;
     data_size[1] = initialSize;
+    this->maxCols = initialSize;
     int data[data_size[0]][data_size[1]];
     for(int i = 0; i < data_size[0]; i++)
         for(int j = 0; j < data_size[1]; j++)
@@ -55,14 +55,14 @@ int HDF::rowSize()
     return N;
 }
 
-vectorMat HDF::operator[](int n)
+vectorMat& HDF::operator[](int n)
 {
     return scores(n);
 }
 
-vectorMat HDF::scores(int n)
+vectorMat& HDF::scores(int n)
 {
-    vectorMat scores_;
+    scores_.clear();
     int start = n * M;
 
     for(int i = 0; i < N; i++)
@@ -90,16 +90,21 @@ vectorMat HDF::scores(int n)
     return scores_;
 }
 
-int HDF::populateFile(int data[], int arrsize)
+int HDF::populateFile(cv::Mat datamat, int totalRows)
 {
   hsize_t s[2];
-  s[1] = prevRows + arrsize;
-  s[0] = 1;
+  s[0] = size_ + 1;
+  s[1] = maxCols; 
+  int arrsize = datamat.cols;  
+  float data[arrsize];
+  for (int i=0; i<arrsize; i++) {
+      data[i] = datamat.at<float>(i);
+  }
   hsize_t dimsext[2] = {1, arrsize};
   hsize_t offset[2];
   H5Dset_extent (dataset, s);
   hid_t filespace = H5Dget_space (dataset);
-  offset[0] = filledOffset;
+  offset[0] = size_;
   offset[1] = 0;
   herr_t status = H5Sselect_hyperslab (filespace, H5S_SELECT_SET, offset, NULL,dimsext, NULL);  
 
@@ -109,5 +114,7 @@ int HDF::populateFile(int data[], int arrsize)
   /* Write the data to the extended portion of dataset  */
   status = H5Dwrite (dataset, H5T_NATIVE_INT, memspace, filespace,
 		  H5P_DEFAULT, data);
-  filledOffset += arrsize;
+  size_s size = {totalRows, arrsize};
+  sizeid[size_] = size;
+  size_ += 1;
 }

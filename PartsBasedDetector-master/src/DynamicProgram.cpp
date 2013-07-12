@@ -39,8 +39,8 @@
 #include <cstdio>
 #include <iostream>
 #include <limits>
-#include "../include/Math.hpp"
-#include "../include/DynamicProgram.hpp"
+#include "Math.hpp"
+#include "DynamicProgram.hpp"
 #include "HDF.hpp"
 
 using namespace cv;
@@ -118,7 +118,7 @@ void DynamicProgram<T>::min(Parts& parts, HDF& scores, vector4DMat& Ix, vector4D
 				Mat_<T> score_in, score_dt;
 				Mat_<int> Ix_dt, Iy_dt;
 				if (cpart.score(ncscores, m).empty()) {
-					score_in = cpart.score(&scores[n], m);
+					score_in = cpart.score(scores[n], m);
 				} else {
 					score_in = cpart.score(ncscores, m);
 				}
@@ -168,7 +168,7 @@ void DynamicProgram<T>::min(Parts& parts, HDF& scores, vector4DMat& Ix, vector4D
 
 				// update the parent's score
 				ComponentPart parent = cpart.parent();
-				if (parent.score(ncscores,m).empty()) parent.score(&scores[n],m).copyTo(parent.score(ncscores,m));
+				if (parent.score(ncscores,m).empty()) parent.score(scores[n],m).copyTo(parent.score(ncscores,m));
 				parent.score(ncscores,m) += maxv;
 				if (parent.self() == 0) {
 					ComponentPart root = parts.component(c);
