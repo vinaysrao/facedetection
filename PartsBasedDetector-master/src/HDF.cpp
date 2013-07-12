@@ -67,7 +67,6 @@ vectorMat& HDF::scores(int n)
     for(int i = 0; i < N; i++)
     {
         size_s s = sizeid[start + i];
-        cv::Mat response(s.x, s.y, CV_64F);
 
         hsize_t offset[2] = {start + i, 0};
         hsize_t dims[2] = {1, N};
@@ -79,10 +78,9 @@ vectorMat& HDF::scores(int n)
         int rdata[N];
         H5Dread(dataset, H5T_NATIVE_INT, memspace, filespace, H5P_DEFAULT, rdata);
 
-        int c = 0;
-        for(int x = 0; x < s.x; x++)
-            for(int y = 0; y < s.y; y++)
-                response.at<float>(x, y) = rdata[c++];
+        cv::Mat response(1, s.x * s.y, CV_64F, rdata);
+        response = response.reshape(0, s.x);
+
         scores_.push_back(response);
     }
 
