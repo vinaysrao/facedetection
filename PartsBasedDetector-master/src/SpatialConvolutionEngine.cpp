@@ -83,7 +83,7 @@ int SpatialConvolutionEngine::getFilterSize() {
  * The convolution of a filter with a feature produces a probability density function
  * (pdf) of part location
  * @param features the input features (at different scales, and by extension, size)
- * @param responses the vector of responses (pdfs) to return
+ * @param hdf an instance of HDF
  */
 void SpatialConvolutionEngine::pdf(const vectorMat& features, HDF& hdf) {
 	cout<< "enter pdf function" << endl;

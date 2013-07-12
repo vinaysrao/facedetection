@@ -11,7 +11,6 @@ using namespace std;
 
 HDF::HDF(int M, int N, int initialSize)
 {
-      
     this->M = M;
     this->N = N;
     string filename("tmp.h5");

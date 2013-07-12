@@ -51,7 +51,7 @@ public:
 	 * where each pixel indicates the likelihood of a positive detection
 	 *
 	 * @param features the input pyramid of features
-	 * @param responses a 2D vector of pdfs, 1st dimension across scale, 2nd dimension across filter
+	 * @param hdf an instance of HDF
 	 */
 	virtual void pdf(const vectorMat& features, HDF& hdf) = 0;
 
